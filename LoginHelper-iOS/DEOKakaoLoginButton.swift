@@ -37,6 +37,12 @@ class DEOKakaoLoginButton : KOLoginButton{
 //        })
 //    }
     
+    
+    /// 카카오 로그인 버튼 클릭 시 사용자 정보 호출
+    ///
+    /// - Parameters:
+    ///   - view: 카카오 버튼 표시할 View
+    ///   - handler: 카카오 정보 가져왔을 시 이벤트 핸들러
     func actionSigninButton(view: UIViewController, completion handler: @escaping (Error?, KOUserMe)->()){
         let session : KOSession = KOSession.shared()
         

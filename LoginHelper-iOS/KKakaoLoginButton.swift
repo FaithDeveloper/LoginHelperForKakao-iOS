@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DEOKakaoLoginButton : KOLoginButton{
+class KKakaoLoginButton : KOLoginButton{
     
     /// 카카오 로그인 버튼 클릭 이벤트 처리
     /// - Detail : 카카오 로그인 버튼 클릭 시 profile 정보를 넘겨줍니다.
@@ -43,7 +43,7 @@ class DEOKakaoLoginButton : KOLoginButton{
     /// - Parameters:
     ///   - view: 카카오 버튼 표시할 View
     ///   - handler: 카카오 정보 가져왔을 시 이벤트 핸들러
-    func actionSigninButton(view: UIViewController, completion handler: @escaping (Error?, KOUserMe)->()){
+    func actionSigninButton(view: UIViewController, completion handler: @escaping (_ result: KOUser?, _ error: Error?)->()){
         let session : KOSession = KOSession.shared()
         
         if session.isOpen(){
@@ -58,16 +58,17 @@ class DEOKakaoLoginButton : KOLoginButton{
             if error != nil {
                 print("Kakao login Error Massage : \(error?.localizedDescription ?? "")")
             }else if session.isOpen(){
-                KOSessionTask.userMeTask(completion: { (error_task, profile) in
-                    if error != nil || profile == nil {
-                        handler(error_task, KOUserMe.init())
+                
+                KOSessionTask.meTask(completionHandler: { (profile, error_task) in
+                    let info: KOUser? = profile as? KOUser
+                    
+                    if  info == nil {
+                        handler(nil, error_task)
                         return
                     }
                     
                     DispatchQueue.main.async(execute: { () -> Void in
-                        if let kakao : KOUserMe = profile{
-                            handler(nil, kakao)
-                        }
+                        handler(info, nil)
                     })
                 })
             }else{

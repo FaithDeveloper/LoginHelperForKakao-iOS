@@ -13,7 +13,7 @@
 		B528B5E421800E92007989A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B528B5E221800E92007989A8 /* LaunchScreen.storyboard */; };
 		B528B5EF2180387C007989A8 /* SampleSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528B5EE2180387C007989A8 /* SampleSignInViewController.swift */; };
 		B528B618218050DC007989A8 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B528B617218050DC007989A8 /* KakaoOpenSDK.framework */; };
-		B528B61A218065BE007989A8 /* DEOKakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528B619218065BE007989A8 /* DEOKakaoLoginButton.swift */; };
+		B528B61A218065BE007989A8 /* KKakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B528B619218065BE007989A8 /* KKakaoLoginButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		B528B5ED21803157007989A8 /* Briging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Briging-Header.h"; sourceTree = "<group>"; };
 		B528B5EE2180387C007989A8 /* SampleSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSignInViewController.swift; sourceTree = "<group>"; };
 		B528B617218050DC007989A8 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		B528B619218065BE007989A8 /* DEOKakaoLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEOKakaoLoginButton.swift; sourceTree = "<group>"; };
+		B528B619218065BE007989A8 /* KKakaoLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKakaoLoginButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				B528B5E221800E92007989A8 /* LaunchScreen.storyboard */,
 				B528B5E521800E92007989A8 /* Info.plist */,
 				B528B5EE2180387C007989A8 /* SampleSignInViewController.swift */,
-				B528B619218065BE007989A8 /* DEOKakaoLoginButton.swift */,
+				B528B619218065BE007989A8 /* KKakaoLoginButton.swift */,
 			);
 			path = "LoginHelper-iOS";
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B528B61A218065BE007989A8 /* DEOKakaoLoginButton.swift in Sources */,
+				B528B61A218065BE007989A8 /* KKakaoLoginButton.swift in Sources */,
 				B528B5EF2180387C007989A8 /* SampleSignInViewController.swift in Sources */,
 				B528B5DA21800E91007989A8 /* AppDelegate.swift in Sources */,
 			);

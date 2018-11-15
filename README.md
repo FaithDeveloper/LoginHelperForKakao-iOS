@@ -15,22 +15,25 @@
 ## 사용 방법
 
 1. 카카오 버튼을 표시할 `UIView` 의 Class Name을 `DEOKakaoLoginButton` 로 변경합니다.
+   ![res](./res/kakao_login.png)
 
 2. `actionSigninButton()` 을 호출 하여 로그인한 카카오 계정 정보를 업데이트 합니다.
 
 ```swift
 @IBOutlet weak var btnKakao: DEOKakaoLoginButton!
 @IBAction func kakoAction(_ sender: Any) {
-    btnKakao.actionSigninButton(view: self, completion: {(error, profile) -> Void in
+    btnKakao.actionSigninButton(view: self, completion: {(profile, error) -> Void in
              if(error != nil){
                 print("error : \(error!)")
                 return
               }
-              DispatchQueue.main.async(execute: { () -> Void in                                                                            					print("kakao id = \(String(describing: profile.id))")
-				 print("kakao displayID = \(String(describing: profile.account?.displayID))")
-                 print("kako profileImageURL = \(String(describing: profile.profileImageURL))")
-                 print("kako email = \(profile.account?.email ?? "No Email")")
-          		})
+              DispatchQueue.main.async(execute: { () -> Void in                                                                            					 print("Kakao Email = \(String(describing: profile!.email))")
+                  if let nickName = profile!.property(forKey: KOUserNicknamePropertyKey) as? String{
+                       print("Kakao Nick Name = \(nickName)")
+                  }
+                  if let profileImage = profile!.property(forKey: KOUserProfileImagePropertyKey) as? String{
+                      print("Kakao Profile Image = \(profileImage)")
+                  }
    	})
 }
 ```

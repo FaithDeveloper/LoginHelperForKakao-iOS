@@ -14,13 +14,13 @@ Kakao Talk 회원가입의 편리성을 위해 만들어진 Login Helper 입니�
 
 ## 사용 방법
 
-1. 카카오 버튼을 표시할 `UIView` 의 Class Name을 `DEOKakaoLoginButton` 로 변경합니다.
+1. 카카오 버튼을 표시할 `UIView` 의 Class Name을 `KKakaoLoginButton` 로 변경합니다.
    ![res](./resource_README/kakaoLogin/kakao_login.png)
 
 2. `actionSigninButton()` 을 호출 하여 로그인한 카카오 계정 정보를 업데이트 합니다.
 
 ```swift
-@IBOutlet weak var btnKakao: DEOKakaoLoginButton!
+@IBOutlet weak var btnKakao: KKakaoLoginButton!
 @IBAction func kakoAction(_ sender: Any) {
     btnKakao.actionSigninButton(view: self, completion: {(profile, error) -> Void in
              if(error != nil){

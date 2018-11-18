@@ -9,8 +9,14 @@
 import UIKit
 
 class SampleSignInViewController: UIViewController{
-    
+    //-------------------------------------------------------------------------------------------
+    // MARK: - IBOutlets
+    //-------------------------------------------------------------------------------------------
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
+    
+    //-------------------------------------------------------------------------------------------
+    // MARK: - IBAction
+    //-------------------------------------------------------------------------------------------
     @IBAction func kakoAction(_ sender: Any) {
         btnKakao.actionSigninButton(view: self
             , completion: {(profile, error) -> Void in
@@ -35,6 +41,9 @@ class SampleSignInViewController: UIViewController{
         })
     }
     
+    //-------------------------------------------------------------------------------------------
+    // MARK: - override method
+    //-------------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
     }
